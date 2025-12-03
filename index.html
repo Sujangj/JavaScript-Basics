@@ -1,0 +1,174 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Task Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 20px;
+      transition: background 0.5s ease;
+    }
+
+    .form-container {
+      max-width: 650px;
+      margin: auto;
+      background: #eab25e;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-title {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .task-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .task-item {
+      margin: 8px 0;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .task-item:hover {
+      background: #eef3ff;
+    }
+
+    .remove-icon {
+      color: #d32f2f;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .remove-icon:hover {
+      color: #b71c1c;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #43a047;
+    }
+
+    .task-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .task-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2 class="form-title" id="taskTitle">Task Feedback Form</h2>
+
+    <form id="taskForm" class="feedback-form">
+      <div class="form-group">
+        <label for="name" class="form-label">Your Name:</label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address:</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group task-section">
+        <label class="form-label">Select Tasks to Perform:</label>
+        <ul class="task-list" id="taskList">
+          <li class="task-item">
+            <div>
+              <input type="checkbox" class="task-checkbox" id="task1" name="task" value="UI Design">
+              <label for="task1">Design UI for Dashboard</label>
+            </div>
+            <i class="remove-icon">✖</i>
+          </li>
+          <li class="task-item">
+            <div>
+              <input type="checkbox" class="task-checkbox" id="task2" name="task" value="Database Setup">
+              <label for="task2">Create Database Schema</label>
+            </div>
+            <i class="remove-icon">✖</i>
+          </li>
+          <li class="task-item">
+            <div>
+              <input type="checkbox" class="task-checkbox" id="task3" name="task" value="API Development">
+              <label for="task3">Develop and Integrate APIs</label>
+            </div>
+            <i class="remove-icon">✖</i>
+          </li>
+          <li class="task-item">
+            <div>
+              <input type="checkbox" class="task-checkbox" id="task4" name="task" value="Testing">
+              <label for="task4">Perform Testing and Debugging</label>
+            </div>
+            <i class="remove-icon">✖</i>
+          </li>
+        </ul>
+
+        <a href="#" id="clearTasksLink" class="task-link">Tasks Cleared </a>
+      </div>
+
+      <div class="form-group">
+        <label for="comments" class="form-label">Additional Comments:</label>
+        <textarea id="comments" name="comments" class="form-textarea" rows="4" placeholder="Your feedback..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
